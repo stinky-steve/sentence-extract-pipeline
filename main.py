@@ -1,36 +1,44 @@
-from data_prep.parse_and_extract import fetch_jsonl_strings, extract_sentences, save_sentences
+from data_prep.parse_and_extract import fetch_jsonl_strings, extract_sentences
 from data_prep.upload_to_minio import upload_file_to_minio
 import os
+import logging
 from dotenv import load_dotenv
 
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('pipeline.log'),
+        logging.StreamHandler()
+    ]
+)
+
 def main():
-    """Main function to orchestrate the data processing and upload pipeline."""
+    """Main pipeline function to process JSONL data and upload results."""
     try:
         # Load environment variables
         load_dotenv()
         
-        # Step 1: Fetch JSONL data
-        print("Fetching JSONL data from PostgreSQL...")
-        jsonl_data = fetch_jsonl_strings()
-        
-        # Step 2: Extract sentences
-        print("Extracting sentences from JSONL data...")
-        sentences = extract_sentences(jsonl_data)
-        
-        # Step 3: Save sentences to file
+        # Process documents and extract sentences
+        logging.info("Starting sentence extraction pipeline...")
         output_file = 'sentences.txt'
-        print(f"Saving {len(sentences)} sentences to {output_file}...")
-        save_sentences(sentences, output_file)
         
-        # Step 4: Upload to MinIO
+        # Fetch and process documents
+        jsonl_data = fetch_jsonl_strings()
+        extract_sentences(jsonl_data, output_file)
+        
+        # Upload results to MinIO
+        logging.info("Uploading results to MinIO...")
         bucket_name = os.getenv('MINIO_BUCKET_NAME')
-        print(f"Uploading {output_file} to MinIO bucket {bucket_name}...")
+        if not bucket_name:
+            raise ValueError("MINIO_BUCKET_NAME not set in environment variables")
+            
         upload_file_to_minio(output_file, bucket_name, output_file)
-        
-        print("Pipeline completed successfully!")
+        logging.info("Pipeline completed successfully")
         
     except Exception as e:
-        print(f"Pipeline failed: {e}")
+        logging.error(f"Pipeline failed: {e}")
         raise
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+{
+  "id": "batch-577d1ff7-7-8b869014-6814-47d8-b4f0-fd92e5edac31",
+  "error": null,
+  "response": {
+    "body": {
+      "model": "mistral-ocr-2503-completion",
+      "pages": [
+        {
+          "index": 0,
+          "markdown": "| 177120 | 612839 | 5199326 | Outcrop |\n| :--: | :--: | :--: | :--: |\n| 177122 | 612844 | 5199315 | Outcrop |\n| 177123 | 611032 | 5200553 | Outcrop |\n| 177124 | 612854 | 5199316 | Outcrop |\n| 177125 | 611047 | 5200562 | Outcrop |\n| 177126 | 615735 | 5197778 | Outcrop |\n| 177127 | 611047 | 5200562 | Subcrop |\n| 177128 | 615735 | 5197778 | Outcrop |\n| 177129 | 611016 | 5200561 | Subcrop |\n| 177130 | 615714 | 5197768 | Outcrop |\n| 177131 | 611005 | 5200561 | Outcrop |\n| 177133 | 611009 | 5200561 | Subcrop |\n| 177135 | 611026 | 5200554 | Outcrop |\n| 177137 | 610997 | 5200555 | Outcrop |\n| 177139 | 610995 | 5200548 | Outcrop |\n| 177141 | 610996 | 5200537 | Outcrop |\n| 177162 | 617521 | 5200206 | Outcrop |\n| 177163 | 617489 | 5200114 | Outcrop |\n| 177164 | 617548 | 5200238 | Outcrop |\n| 177165 | 617587 | 5199993 | Outcrop |\n| 177166 | 617579 | 5199993 | Outcrop |\n| 177167 | 617579 | 5199993 | Outcrop |\n| 177168 | 617579 | 5199993 | Outcrop |\n| 177169 | 617317 | 5199990 | Outcrop |\n| 177170 | 617829 | 5200083 | Outcrop |\n| 177171 | 617829 | 5200084 | Outcrop |\n| 177172 | 616668 | 5199082 | Outcrop |\n| 177173 | 616643 | 5199052 | Outcrop |\n| 177174 | 618222 | 5200907 | Outcrop |\n| 177175 | 617563 | 5200156 | Outcrop |\n| 0001C1K | 610997 | 5200565 | Chip Sample |\n| 0002C1K | 610997 | 5200565 | Chip Sample |\n| 0003C1K | 610997 | 5200565 | Chip Sample |\n| 0004C1K | 610997 | 5200565 | Chip Sample |\n| 0005C1K | 611003 | 5200566 | Chip Sample |\n| 0006C1K | 611013 | 5200565 | Chip Sample |\n| 0007C1K | 611013 | 5200565 | Chip Sample |\n| 0008C1K | 611013 | 5200565 | Chip Sample |\n| 0009C1K | 611032 | 5200563 | Chip Sample |\n| 0010C1K | 611032 | 5200563 | Chip Sample |\n| 0011C1K | 611033 | 5200563 | Chip Sample |",
+          "dimensions": {
+            "dpi": 200,
+            "width": 1700,
+            "height": 2200
+          },
+          "image_links": []
+        }
+      ],
+      "usage_info": {
+        "doc_size_bytes": 4197,
+        "pages_processed": 1
+      }
+    },
+    "status_code": 200
+  },
+  "custom_id": "A001380_P165"
+}
